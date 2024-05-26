@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Draw a point (1)</title>
+  </head>
+  <style>
+    input:focus {
+      outline: none;
+    }
+    #colorDisplay {
+      margin-bottom: 10px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+    img {
+      height: 200px;
+      width: 200px;
+    }
+    #bottomSpace {
+      height: 20vh;
+      width: 100vw;
+      background-color: white;
+    }
+
+    .centerCanvas {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* NOTE: to self had assign values to canvas then scale it to make it render correctly for the aspects or else it would be screwed */
+  </style>
+  <body onload="main()">
+    <h2
+      style="font-family: Arial, sans-serif; color: #333; font-weight: normal"
+    >
+      Anthony Duong
+    </h2>
+    <h2
+      style="
+        font-family: Arial, sans-serif;
+        color: #007bff;
+        font-weight: normal;
+        margin-top: -10px;
+      "
+    >
+      ankaduon@ucsc.edu
+    </h2>
+    <h2>
+      NOTES TO GRADER: to use light X slider light animation must be turned off
+    </h2>
+
+    <div
+      style="
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        width: 200px;
+        text-align: center;
+      "
+    >
+      <span id="playerPos"></span>
+      <span style="font-weight: bold; color: #6c757d">Animation:</span>
+      <span id="fps" style="color: #007bff"></span>
+      <span style="color: #6c757d">fps</span>
+    </div>
+    <div>
+      <button
+        id="normalOn"
+        style="
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        Normal on
+      </button>
+      <button
+        id="normalOff"
+        style="
+          background-color: #f44336;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        Normal off
+      </button>
+      <button
+        id="light_on"
+        style="
+          background-color: #008cba;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        Light On
+      </button>
+      <button
+        id="light_off"
+        style="
+          background-color: #555555;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        Light Off
+      </button>
+      <button
+        id="lightAnimationOn"
+        style="
+          background-color: #008cba;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        light Animation On
+      </button>
+      <button
+        id="lightAnimationOff"
+        style="
+          background-color: #f44336;
+          color: white;
+          border: none;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        "
+      >
+        light Animation Off
+      </button>
+
+      <p>
+        Light X<input
+          type="range"
+          min="-250"
+          max="250"
+          value="0"
+          class="slider"
+          id="lightSlideX"
+        />
+        Light Y<input
+          type="range"
+          min="-250"
+          max="250"
+          value="0"
+          class="slider"
+          id="lightSlideY"
+        />
+        Light Z<input
+          type="range"
+          min="-250"
+          max="600"
+          value="5"
+          class="slider"
+          id="lightSlideZ"
+        />
+      </p>
+    </div>
+    <canvas id="asg2" width="600" height="600">
+      Please use the browser supporting "canvas".
+    </canvas>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="./Triangle.js"></script>
+    <script src="./Square.js"></script>
+    <script src="./Circle.js"></script>
+    <script src="./Cube.js"></script>
+    <script src="./Camera.js"></script>
+    <script src="./asg4.js"></script>
+    <script src="./drawPenguin.js"></script>
+    <script src="./Sphere.js"></script>
+  </body>
+</html>
